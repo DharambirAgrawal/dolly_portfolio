@@ -24,40 +24,43 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 relative overflow-hidden"
+    >
       {/* Animated Background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-5">
-          {[...Array(50)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-              }}
-            >
-              {i % 3 === 0 ? (
-                <Mail className="w-6 h-6" />
-              ) : i % 3 === 1 ? (
-                <Phone className="w-6 h-6" />
-              ) : (
-                <MapPin className="w-6 h-6" />
-              )}
-            </div>
-          ))}
-        </div>
+      <div className="absolute inset-0 opacity-30">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          >
+            {i % 3 === 0 ? (
+              <Mail className="w-6 h-6 text-blue-600" />
+            ) : i % 3 === 1 ? (
+              <Phone className="w-6 h-6 text-blue-600" />
+            ) : (
+              <MapPin className="w-6 h-6 text-blue-600" />
+            )}
+          </div>
+        ))}
       </div>
 
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+            Get In Touch
+          </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div className="space-y-8">
-              <h3 className="text-2xl font-semibold mb-6">
+              <h3 className="text-2xl font-semibold mb-6 text-gray-800">
                 Contact Information
               </h3>
 
@@ -95,7 +98,10 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6 bg-white p-8 rounded-lg shadow-lg"
+            >
               <div>
                 <label
                   htmlFor="name"
